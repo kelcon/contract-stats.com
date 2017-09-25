@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>	
+  <meta charset="utf-8">
+
+	<title>Football stats, goals, soccer, players - goals-stats.com</title>
+
+	<meta name="robots" content="index, follow">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="/stylesheets/normalize.css">
+	<link rel="stylesheet" href="/stylesheets/skeleton.css">
+	<link rel="stylesheet" href="/stylesheets/custom.css">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	
+	<script src="/javascripts/site.js"></script>
+
+	<meta name="google-site-verification" content="vX28PmqM6B1GXwICZpm6vY8szFrEnt0XcQDvvXCWqGU" />
+
+</head>
+<body>
+
+<div class="container">
+
+	<div class="row">
+        <h1>Goals and Stats</h1>
+    </div>
+
+</div>
+
+<div class="container">
+
+	<div class="row">
+		<p>You might find football stats on our website - scores and goals. We publish accurate list of players, coaches and managers.</p>
+	</div>
+
+</div>
+
+    <div class="navbar-spacer"></div>
+    <nav class="navbar">
+      <div class="container">
+
+        <ul class="navbar-list">
+          <li class="navbar-item"><a class="navbar-link" href="/">Start</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/{{preffixes.players}}/1">Players</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/{{preffixes.clubs}}/1">Teams</a></li>
+        </ul>
+
+      </div>
+    </nav>
+
+
+<div class="container">
+	<div class="row">
+		&nbsp;
+	</div>
+<!--
+	<div class="row">
+		<img src="/images/31791512851_f867370d90_o.jpg" class="u-max-full-width" title="Save the Dream | https://creativecommons.org/licenses/by/2.0/" />
+	</div>
+-->
+</div>
+
+<div class="container">
+
+	<div class="row">
+
+		<div class="one-half column">
+
+			<h2>Football Players</h2>
+
+			<p>Check stats and scores. Actual team, career and number of goals.</p>
+
+			{{#players}}
+				<div class="entry extra-margin">
+					<a href="/{{preffixes.player}}/{{slug}}">{{name}}</a>
+				</div>
+			{{/players}}
+
+				<div class="entry extra-margin">
+					<a href="/{{preffixes.players}}/1">more</a>
+				</div>
+
+
+		</div>
+		<div class="one-half column">
+
+			<h2>Football Teams</h2>
+
+			<p>Teams, transfers, stats and data.</p>
+
+			{{#clubs}}
+				<div class="entry extra-margin">
+					<a href="/{{preffixes.club}}/{{slug}}">{{name}}</a>
+				</div>
+			{{/clubs}}
+
+
+				<div class="entry extra-margin">
+					<a href="/{{preffixes.clubs}}/1">more</a>
+				</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		&nbsp;
+	</div>
+</div>
+
+<div class="container">
+
+	<div class="row">
+        <p>Copyright &copy; goals-stats.com 2017</p>
+    </div>
+</div>
+
+{{> analytics}}
+
+</body>
+</html>

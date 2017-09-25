@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>	
+  <meta charset="utf-8">
+
+	<title>Football teams, soccer teams - goals-stats.com</title>
+	
+	<meta name="robots" content="noindex, follow">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="/stylesheets/normalize.css">
+	<link rel="stylesheet" href="/stylesheets/skeleton.css">
+	<link rel="stylesheet" href="/stylesheets/custom.css">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+	<script src="/javascripts/site.js"></script>
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+	<div class="row">
+        <h1>Teams</h1>
+    </div>
+</div>
+
+    <div class="navbar-spacer"></div>
+    <nav class="navbar">
+      <div class="container">
+        <ul class="navbar-list">
+          <li class="navbar-item"><a class="navbar-link" href="/">Start</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/{{preffixes.players}}/1">Players</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/{{preffixes.clubs}}/1">Teams</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+<div class="container">
+	<div class="row">
+		&nbsp;
+	</div>
+</div>
+
+
+<div class="container">
+	<div class="row">
+
+
+	{{#clubs}}
+		{{#slug}}
+		<div class="entry extra-margin">
+			<a href="/{{preffixes.club}}/{{slug}}">{{name}}</a>		
+		</div>
+		{{/slug}}
+	{{/clubs}}
+
+	</div>
+
+</div>
+
+
+<div class="container">
+	<div class="row">
+		&nbsp;
+	</div>
+</div>
+
+<div class="container">
+
+	<div class="row">
+
+<p>
+
+	{{#prev}}
+		<a href="/{{preffixes.players}}/{{.}}" rel="prev">previous</a>		
+	{{/prev}}
+
+	{{#next}}
+		<a href="/{{preffixes.players}}/{{.}}" rel="next">next</a>		
+	{{/next}}
+</p>
+
+	</div>
+</div>
+
+<div class="container">
+
+	<div class="row">
+        <p>Copyright &copy; goals-stats.com 2017</p>
+    </div>
+</div>
+
+{{> analytics}}
+
+</body>
+</html>

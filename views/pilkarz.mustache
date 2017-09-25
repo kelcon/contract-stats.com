@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>	
+  <meta charset="utf-8">
+
+	<title>{{name}} - stats, goals, scores - goals-stats.com</title>
+	
+	<meta name="robots" content="index, follow">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="/stylesheets/normalize.css">
+	<link rel="stylesheet" href="/stylesheets/skeleton.css">
+	<link rel="stylesheet" href="/stylesheets/custom.css">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+	<script src="/javascripts/site.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+
+	<div class="row">
+        <h1>{{name}}</h1>
+    </div>
+</div>
+
+    <div class="navbar-spacer"></div>
+    <nav class="navbar">
+      <div class="container">
+        <ul class="navbar-list">
+          <li class="navbar-item"><a class="navbar-link" href="/">Start</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/{{preffixes.players}}/1">Players</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/{{preffixes.clubs}}/1">Teams</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+<div class="container">
+	<div class="row">
+		&nbsp;
+	</div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+    	{{#image}} <img src="/img/{{slug}}" class="u-max-full-width" /> {{/image}}
+    </div>
+
+</div>
+
+<div class="container">
+
+	<div class="row">
+
+		<div class="eight columns">
+
+		{{#placeOfBirth}}
+
+			<h2>Birthplace</h2>
+
+			<p>{{.}}</p>
+
+		{{/placeOfBirth}}
+
+		{{#dateOfBirth}}
+
+			<h2>Date of birth</h2>
+
+			<p>{{.}}</p>			
+
+		{{/dateOfBirth}}
+
+
+		{{#placeOfDeath}}
+
+			<h2>Deathplace</h2>
+
+			<p>{{.}}</p>
+
+		{{/placeOfDeath}}
+
+
+		{{#dateOfDeath}}
+
+			<h2>Date of death</h2>
+
+			<p>{{.}}</p>
+
+		{{/dateOfDeath}}
+
+		{{#playingPosition}}
+
+			<h2>Position</h2>
+
+			<p>{{.}}</p>
+
+		{{/playingPosition}}
+
+		{{#currentTeam}}
+
+			<h2>Current team</h2>
+
+			<p>{{.}}</p>
+
+		{{/currentTeam}}
+
+		{{#youth.length}}
+		<h1>Junior career</h1>
+
+		<table>
+			<tr>
+				<td><b>Years</b></td>
+				<td><b>Team</b></td>
+				<td><b>Goals</b></td>
+				<td><b>Matches</b></td>
+			</tr>
+
+		{{#youth}}
+
+			<tr>
+				<td>{{start}}-{{end}}</td>
+				<td>{{#footballClub}}{{name}}{{/footballClub}}</td>
+				<td>{{goals}}</td>
+				<td>{{matches}}</td>
+			</tr>
+
+		{{/youth}}
+		</table>
+		{{/youth.length}}
+
+		{{#senior.length}}
+		<h1>Senior careeer</h1>
+
+		<table>
+			<tr>
+				<td><b>Years</b></td>
+				<td><b>Team</b></td>
+				<td><b>Goals</b></td>
+				<td><b>Matches</b></td>
+			</tr>
+
+		{{#senior}}
+
+			<tr>
+				<td>{{start}}-{{end}}</td>
+				<td>{{#footballClub}}{{name}}{{/footballClub}}</td>
+				<td>{{goals}}</td>
+				<td>{{matches}}</td>
+			</tr>
+
+		{{/senior}}
+		</table>
+		{{/senior.length}}
+
+		{{#national.length}}
+		<h1>National team</h1>
+
+		<p>{{name}} played {{matchesTotal.goals}} matches in National Team. Scored {{goalsTotal.senior}} for National Team.</p>
+
+		<table>
+			<tr>
+				<td><b>Years</b></td>
+				<td><b>Team</b></td>
+				<td><b>Goals</b></td>
+				<td><b>Matches</b></td>
+			</tr>
+
+			{{#national}}
+
+				<tr>
+					<td>{{start}}-{{end}}</td>
+					<td>{{#footballClub}}{{name}}{{/footballClub}}</td>
+					<td>{{goals}}</td>
+					<td>{{matches}}</td>
+				</tr>
+
+			{{/national}}		
+		</table>
+		{{/national.length}}
+
+		{{#manager.length}}
+		<h1>Coaching career</h1>
+
+		<table>
+			<tr>
+				<td><b>Year</b></td>
+				<td><b>Team</b></td>
+			</tr>
+
+			{{#manager}}
+
+				<tr>
+					<td>{{start}}-{{end}}</td>
+					<td>{{#footballClub}}{{name}}{{/footballClub}}</td>
+				</tr>
+
+			{{/manager}}		
+		</table>
+		{{/manager.length}}
+
+
+		<p>On this page you might: number of goals scored by {{name}}? number of matches played by {{name}}? {{name}}'s current team and previous teams?</p>
+
+
+
+	</div>
+	<div class="four columns">
+
+	{{#senior.length}}
+
+		<h2>Zobacz</h2>
+		
+			{{#youth}}
+			<ul>
+				<li><a href="/{{preffixes.club}}/{{footballClub.0.slug}}">players of {{#footballClub}}{{name}}{{/footballClub}}</a></li>		
+			</ul>
+			{{/youth}}		
+			{{#senior}}
+			<ul>
+				<li><a href="/{{preffixes.club}}/{{footballClub.0.slug}}">players of {{#footballClub}}{{name}}{{/footballClub}}</a></li>		
+			</ul>
+			{{/senior}}
+			{{#manager}}
+			<ul>
+				<li><a href="/{{preffixes.club}}/{{footballClub.0.slug}}">players of {{#footballClub}}{{name}}{{/footballClub}}</a></li>		
+			</ul>
+			{{/manager}}	
+
+	{{/senior.length}}
+
+		</div>
+	</div>
+</div>
+
+<div class="container">
+
+	<div class="row">
+        <p>Copyright &copy; goals-stats.com 2017</p>
+    </div>
+</div>
+
+{{> analytics}}
+
+</body>
+</html>

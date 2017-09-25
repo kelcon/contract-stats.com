@@ -1,0 +1,23 @@
+{
+  "name": "compress",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "jade": "~1.11.0",
+    "morgan": "~1.8.1",
+    "serve-favicon": "~2.4.2",
+    "mustache-express": "~1.2.5",
+    "passport-facebook": "~2.1.1",
+    "express-session": "~1.15.5",
+    "connect-ensure-login": "~0.1.1",
+    "pouchdb-node": "~6.3.4",
+    "pouchdb-find": "~6.3.4"
+  }
+}

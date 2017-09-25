@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>	
+  <meta charset="utf-8">
+
+	<title>{{club.name}} - players, coach, scores, transfers - goals-stats.com</title>
+	
+	<meta name="robots" content="index, follow">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="/stylesheets/normalize.css">
+	<link rel="stylesheet" href="/stylesheets/skeleton.css">
+	<link rel="stylesheet" href="/stylesheets/custom.css">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<!--<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>-->
+	<script src="/javascripts/site.js"></script>
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+	<div class="row">
+        <h1>{{club.name}}</h1>
+    </div>
+    <div class="row">
+    	{{#club.image}} <img src="/img/{{slug}}" /> {{/club.image}}
+    </div>
+</div>
+
+    <div class="navbar-spacer"></div>
+    <nav class="navbar">
+      <div class="container">
+        <ul class="navbar-list">
+          <li class="navbar-item"><a class="navbar-link" href="/">Start</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/{{preffixes.players}}/1">Players</a></li>
+          <li class="navbar-item"><a class="navbar-link" href="/{{preffixes.clubs}}/1">Teams</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+<div class="container">
+	<div class="row">
+		&nbsp;
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">		
+
+		<div class="one-half column">
+
+	{{#club}}
+
+		{{#league}}
+
+			<h2>League</h2>
+
+			<p>{{name}}</p>
+
+		{{/league}}
+
+
+		{{#owner}}
+
+			<h2>Owner</h2>
+
+			<p>{{name}}</p>
+
+		{{/owner}}
+
+		{{#president}}
+
+			<h2>President/CEO</h2>
+
+			<p>{{name}}</p>
+
+		{{/president}}
+
+
+		{{#manager}}
+
+			<h2>Manager</h2>
+
+			<p>{{name}}</p>
+
+		{{/manager}}
+
+		{{#coach}}
+
+			<h2>Coach</h2>
+
+			<p>{{name}}</p>
+
+		{{/coach}}
+
+		{{#ground}}
+
+			<h2>Stadium</h2>
+
+			<p>{{name}}</p>
+
+		{{/ground}}
+
+		{{#capacity}}
+
+			<h2>Stadium capacity</h2>
+
+			<p>{{.}}</p>
+
+		{{/capacity}}
+
+	{{/club}}
+
+	</div>
+	<div class="one-half column">
+
+	{{#players.length}}
+
+		<h2>Players</h2>
+		
+			<table class="u-full-width">
+			  <thead>
+			    <tr>
+			      <th>Players</th>
+			      <th>Scores</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+
+				{{#players}}			
+				<tr>
+					<td>{{name}}</td><td><a href="/{{preffixes.player}}/{{slug}}">goals</a>, <a href="/{{preffixes.player}}/{{slug}}">stats</a></td>		
+				</tr>
+				{{/players}}
+
+				</tbody>
+			</table>
+
+	{{/players.length}}
+
+</div>
+	</div>
+</div>
+
+
+<div class="container">
+	<div class="row">
+		<p>On this page you are able to check players of {{club.name}}, who scores for {{club.name}} and who is coaching {{club.name}}.</p>
+	</div>
+</div>
+
+
+<div class="container">
+	<div class="row">
+		&nbsp;
+	</div>
+</div>
+
+<div class="container">
+
+	<div class="row">
+        <p>Copyright &copy; goals-stats.com 2017</p>
+    </div>
+</div>
+
+{{> analytics}}
+
+</body>
+</html>
