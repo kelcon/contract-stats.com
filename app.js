@@ -10,25 +10,25 @@ var rest   		 	  = require('restling');
 var request   		  = require('request');
 
 const lang = 'en';
-const api_server = "localhost";
+const api_server = "pitagoras.keler.org";
 
 const collections = {
-	club: 'footballclub',
-	player: 'footballbiography'
+	club: 'basketballclub',
+	player: 'basketballbiography'
 }
 
 const preffixes = {
-	club: 	'team',
-	clubs: 	'teams',
-	player: 'player',
-	players: 'players'
+	club: 	'basketball-team',
+	clubs: 	'basketball-teams',
+	player: 'basketball-player',
+	players: 'basketball-players'
 }
 
 const views = {
 	club: 	'klub',
 	clubs: 	'kluby',
-	player: 'pilkarz',
-	players: 'pilkarze'
+	player: 'koszykarz',
+	players: 'koszykarze'
 }
 
 var app = express();
@@ -138,8 +138,6 @@ app.get('/'+preffixes.players+'/:page', function(req, res){
 	var resources = {
 		players: 	{url: 'http://'+api_server+':9902/'+lang+'/collection/'+collections.player+'?offset='+(page*size)+'&limit=40', options: {username: 't', password: 't'} }
 	};
-
-console.log(resources);
 
 	rest.settleAsync(resources).then(function(results) {
 		res.render( views.players, {

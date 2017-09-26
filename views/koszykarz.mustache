@@ -94,21 +94,61 @@
 
 		{{/dateOfDeath}}
 
-		{{#playingPosition}}
+		{{#weight}}
+
+			<h2>Weight</h2>
+
+			<p>{{.}}</p>
+
+		{{/weight}}
+
+		{{#height}}
+
+			<h2>Height</h2>
+
+			<p>{{.}}</p>
+
+		{{/height}}
+
+		{{#draft}}
+
+			<h2>Draft</h2>
+
+			<p>{{.}}</p>
+
+		{{/draft}}
+
+		{{#college}}
+
+			<h2>College</h2>
+
+			<p>{{.}}</p>
+
+		{{/college}}
+
+		{{#hightSchool}}
+
+			<h2>High School</h2>
+
+			<p>{{.}}</p>
+
+		{{/hightSchool}}
+
+		{{#nationality}}
+
+			<h2>Nationality</h2>
+
+			<p>{{.}}</p>
+
+		{{/nationality}}
+
+		{{#position}}
 
 			<h2>Position</h2>
 
 			<p>{{.}}</p>
 
-		{{/playingPosition}}
-
-		{{#currentTeam}}
-
-			<h2>Current team</h2>
-
-			<p>{{.}}</p>
-
-		{{/currentTeam}}
+		{{/position}}
 
 		{{#youth.length}}
 		<h1>Junior career</h1>
@@ -126,8 +166,6 @@
 			<tr>
 				<td>{{start}}-{{end}}</td>
 				<td>{{#footballClub}}{{name}}{{/footballClub}}</td>
-				<td>{{goals}}</td>
-				<td>{{matches}}</td>
 			</tr>
 
 		{{/youth}}
@@ -141,8 +179,6 @@
 			<tr>
 				<td><b>Years</b></td>
 				<td><b>Team</b></td>
-				<td><b>Goals</b></td>
-				<td><b>Matches</b></td>
 			</tr>
 
 		{{#senior}}
@@ -150,8 +186,6 @@
 			<tr>
 				<td>{{start}}-{{end}}</td>
 				<td>{{#footballClub}}{{name}}{{/footballClub}}</td>
-				<td>{{goals}}</td>
-				<td>{{matches}}</td>
 			</tr>
 
 		{{/senior}}
@@ -167,8 +201,6 @@
 			<tr>
 				<td><b>Years</b></td>
 				<td><b>Team</b></td>
-				<td><b>Goals</b></td>
-				<td><b>Matches</b></td>
 			</tr>
 
 			{{#national}}
@@ -176,8 +208,6 @@
 				<tr>
 					<td>{{start}}-{{end}}</td>
 					<td>{{#footballClub}}{{name}}{{/footballClub}}</td>
-					<td>{{goals}}</td>
-					<td>{{matches}}</td>
 				</tr>
 
 			{{/national}}		
